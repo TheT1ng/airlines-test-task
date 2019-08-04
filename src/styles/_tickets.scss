@@ -22,6 +22,10 @@
   color: #9DA4A7;
 }
 
+.backdrop-gray {
+  background-color: rgba(0, 0, 0, .5);
+}
+
 .flightLine {
   height: 1px;
   background-color: #D2D5D6;
@@ -30,7 +34,9 @@
 .mobileStickyButton {
   top: 0;
   z-index: 1;
-  margin-left: -15px;
+  .filterAndCurrencyContainer {
+    height: unset!important;
+  }
   img {
     width: 48px;
     height: 48px;

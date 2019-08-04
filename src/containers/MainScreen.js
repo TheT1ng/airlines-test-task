@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import FilterAndCurrency from "./FilterAndCurrency";
-import SingleTicket from "./SingleTicket";
+import FilterAndCurrency from "../components/FilterAndCurrency";
+import SingleTicket from "../components/SingleTicket";
 
 import {
   ticketsRequest,
   currencyChange,
   ticketsFilter
-} from "../actionCreators/ticketsActionCreators";
+} from "../actions/asyncActions/tikcetsAsyncActions";
 
 import logo from "../images/logo.svg";
 import filterIcon from "../images/filterIcon.svg";
@@ -59,7 +59,6 @@ class MainScreen extends React.Component {
   onOnlyClick = e => {
     const checkboxIndex = e.target.name;
     const { onTicketsFilter } = this.props;
-    console.log(checkboxIndex);
     this.setState(
       prevState => ({
         stopsArr: prevState.stopsArr.map(
@@ -85,7 +84,10 @@ class MainScreen extends React.Component {
     const { stopsArr, currency, isModalOpened } = this.state;
     return (
       <div className="container-fluid">
-        <div className="mobileStickyButton d-inline-block position-fixed shadow d-md-none">
+        <div
+          className={`mobileStickyButton d-inline-block position-fixed d-md-none row ${isModalOpened &&
+            "w-100 h-100 overflow-hidden backdrop-gray"}`}
+        >
           {isModalOpened ? (
             <FilterAndCurrency
               onCheck={this.onCheck}
@@ -100,7 +102,7 @@ class MainScreen extends React.Component {
             <button
               type="button"
               onClick={this.onModalToggle}
-              className="btn btn-sm btn-primary"
+              className="btn btn-sm btn-primary shadow"
             >
               <img src={filterIcon} alt="Show filters and currency selector" />
             </button>

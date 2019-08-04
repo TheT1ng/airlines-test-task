@@ -2,28 +2,23 @@ import React from "react";
 
 const checkboxesHash = {
   0: {
-    id: "id-0",
-    type: 0,
+    id: 0,
     text: "Все"
   },
   1: {
-    id: "id-1",
-    type: 1,
+    id: 1,
     text: "Без пересадок"
   },
   2: {
-    id: "id-2",
-    type: 2,
+    id: 2,
     text: "1 пересадка"
   },
   3: {
-    id: "id-3",
-    type: 3,
+    id: 3,
     text: "2 пересадки"
   },
   4: {
-    id: "id-4",
-    type: 4,
+    id: 4,
     text: "3 пересадки"
   }
 };
@@ -73,7 +68,7 @@ const FilterAndCurrency = ({
     {Object.values(checkboxesHash).map((elem, index) => (
       <div
         className="row px-3 py-2 align-items-center stopsContainer"
-        key={index}
+        key={elem.id}
       >
         <div className="col-9 p-0">
           <input
@@ -102,7 +97,7 @@ const FilterAndCurrency = ({
     ))}
     <button
       type="button"
-      className="btn btn-danger w-100 text-uppercase d-md-none"
+      className="btn btn-danger w-100 text-uppercase d-md-none mt-2"
       onClick={onModalToggle}
     >
       close

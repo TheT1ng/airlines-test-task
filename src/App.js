@@ -2,7 +2,7 @@ import React from "react";
 import "./index.scss";
 import { Provider } from "react-redux";
 import store from "./store/configureStore";
-import MainScreen from "./components/MainScreen";
+import MainScreen from "./containers/MainScreen";
 
 function App() {
   return (
