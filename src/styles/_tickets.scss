@@ -1,0 +1,38 @@
+.purchaseButton {
+  background-color: #FF6D00;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all .25s;
+  &:hover {
+    opacity: .8;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.text-small {
+  font-size: 65%!important;
+  color: #9DA4A7;
+}
+
+.text-gray {
+  color: #9DA4A7;
+}
+
+.flightLine {
+  height: 1px;
+  background-color: #D2D5D6;
+}
+
+.mobileStickyButton {
+  top: 0;
+  z-index: 1;
+  margin-left: -15px;
+  img {
+    width: 48px;
+    height: 48px;
+  }
+}

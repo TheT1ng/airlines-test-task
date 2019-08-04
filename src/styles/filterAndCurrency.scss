@@ -1,0 +1,103 @@
+.filterAndCurrencyContainer {
+  height: 390px;
+  position: sticky;
+  top: 0;
+  .currencyButtonsContainer {
+    box-shadow: 0 0 0 1px lightgray;
+    height: 40px;
+    position: relative;
+    border-radius: 5px;
+    .currencyButton {
+      background-color: unset;
+      box-shadow: none;
+      border-radius: 0;
+      color: #1e90ff;
+      transition: all .25s linear;
+      z-index: 100;
+      height: 42px;
+      position: relative;
+      top: -1px;
+      outline: none;
+      font-size: 90%!important;
+      border: 1px solid transparent;
+      &:first-of-type {
+        border-radius: 5px 0 0 5px;
+      }
+      &:last-of-type {
+        border-radius: 0 5px 5px 0;
+      }
+      &:hover {
+        background-color: rgba(30, 144, 255, .1);
+        border: 1px solid dodgerblue;
+      }
+    }
+    .isSelected {
+      background-color: dodgerblue;
+      color: #fff;
+      &:hover {
+        background-color: dodgerblue;
+        color: #fff;
+      }
+    }
+  }
+  .stopsContainer {
+    transition: all .25s linear;
+    &:hover {
+      background-color: rgba(30, 144, 255, .1);
+      & div:last-child {
+        display: flex!important;
+      }
+    }
+    .stopsCheckbox {
+      position: absolute;
+      opacity: 0;
+      & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        font-size: 90%;
+      }
+      & + label:before {
+        content: '';
+        margin-right: .5rem;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 22px;
+        height: 22px;
+        background: white;
+        border: 1px solid lightgray;
+        border-radius: 3px;
+      }
+      &:checked + label:before {
+        border: 1px solid dodgerblue;
+        background-color: rgba(30, 144, 255, .1);
+      }
+      &:checked + label:after {
+        content: '';
+        position: absolute;
+        left: 6px;
+        top: 11px;
+        background: dodgerblue;
+        width: 2px;
+        height: 2px;
+        box-shadow:
+                2px 0 0 dodgerblue,
+                4px 0 0 dodgerblue,
+                4px -2px 0 dodgerblue,
+                4px -4px 0 dodgerblue,
+                4px -6px 0 dodgerblue,
+                4px -8px 0 dodgerblue;
+        transform: rotate(45deg);
+      }
+    }
+    .onlyButton {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      cursor: pointer;
+      color: dodgerblue;
+      font-size: 70%;
+      background: transparent;
+    }
+  }
+}
