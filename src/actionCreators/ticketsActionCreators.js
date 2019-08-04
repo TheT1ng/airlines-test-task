@@ -13,11 +13,13 @@ export function ticketsRequest() {
     fetch("./tickets.json")
       .then(response => response.json())
       .then(success => {
+        const sortedTickets = success.tickets.sort((a, b) => a.price - b.price);
+        console.log(sortedTickets);
         sessionStorage.setItem(
           "defaultTicketsList",
-          JSON.stringify(success.tickets)
+          JSON.stringify(sortedTickets)
         );
-        dispatch({ type: TICKETS_SUCCESS, ticketsList: success });
+        dispatch({ type: TICKETS_SUCCESS, ticketsList: sortedTickets });
       })
       .catch(e => {
         dispatch({ type: TICKETS_FAIL });

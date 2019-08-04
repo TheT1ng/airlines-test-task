@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
         ...state,
         isLoading: false,
         isSuccess: true,
-        ticketsList: action.ticketsList.tickets
+        ticketsList: action.ticketsList
       };
     case TICKETS_FAIL:
       return {
